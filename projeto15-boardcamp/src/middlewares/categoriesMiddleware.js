@@ -1,7 +1,7 @@
 import { connection } from "../database/database.js";
 import { categoriesSchema } from "../schemas/schema.js";
 
-async function categorieValidation (req,res,next){
+async function categoriesValidation (req,res,next){
     const {name}=req.body;
     if(!name){
         return res.sendStatus(400);
@@ -25,4 +25,4 @@ async function categorieValidation (req,res,next){
     }
 
 }
-export {categorieValidation};
+export {categoriesValidation};

@@ -1,7 +1,5 @@
-import { query } from "express";
 import { connection } from "../database/database.js";
 async function getCategories(req,res){
-    
     try {
         const categories= await connection.query('SELECT * FROM categories;');
         res.send(categories.rows); 

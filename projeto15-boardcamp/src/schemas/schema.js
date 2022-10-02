@@ -1,6 +1,6 @@
 import joi from 'joi';
 
 const categoriesSchema=joi.object({
-    name:joi.string()
+    name:joi.string().trim()
 });
 export {categoriesSchema};
