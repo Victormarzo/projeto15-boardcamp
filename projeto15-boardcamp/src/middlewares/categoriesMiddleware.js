@@ -6,10 +6,10 @@ async function categoriesValidation (req,res,next){
     if(!name){
         return res.sendStatus(400);
     }
-    const validation=categoriesSchema.validate({name},{abortEarly:false,});
+    const validation=categoriesSchema.validate({name},{abortEarly:false});
     if (validation.error){
-        const errors=validation.error.details.map((detail)=>detail.message);
-        res.sendStatus(422).send(errors);
+        const errors=validation.error.details.map(detail=>detail.message);
+        res.status(422).send({ errors: errors });
         return;
     }
     try {
