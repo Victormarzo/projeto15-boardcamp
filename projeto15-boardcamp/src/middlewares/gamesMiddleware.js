@@ -1,6 +1,6 @@
 import { connection } from "../database/database.js";
-
 import {gamesSchema} from '../schemas/schema.js'
+
 async function getGamesValidation (req,res,next){
     const query=req.query.name
     res.locals.name = query;

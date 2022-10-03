@@ -1,12 +1,12 @@
 import joi from 'joi';
 
 const categoriesSchema=joi.object({
-    name:joi.string().empty(),
+    name:joi.string().empty().trim(),
 });
 
 const gamesSchema=joi.object({
     name:joi.string()
-    .empty().required(),
+    .empty().required().trim(),
     image:joi.string()
     .required(),
     stockTotal:joi.number()
@@ -23,5 +23,22 @@ const gamesSchema=joi.object({
     .required(),
 });
 
+const costumersSchema=joi.object({
+    name:joi.string()
+    .empty().required().trim(),
+    phone:joi.string()
+    .min(10)
+    .max(11)
+    .required(),
+    birthday:joi.date().
+    less('now').
+    required(),
+    cpf:joi.string()
+    .min(11)
+    .max(11)
+    .required(),
 
-export {categoriesSchema,gamesSchema};
+});
+
+
+export {categoriesSchema,gamesSchema,costumersSchema};
