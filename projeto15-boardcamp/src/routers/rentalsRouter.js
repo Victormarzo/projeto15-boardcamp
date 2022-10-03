@@ -6,7 +6,7 @@ const router=express.Router();
 
 router.get('/rentals',getRentalsValidation,getRentals)
 router.post('/rentals',postRentalValidation,postRentals)
-router.put('/rentals/:id/return',putRentalValidation,putRentals)
+router.post('/rentals/:id/return',putRentalValidation,putRentals)
 router.delete('/rentals/:id',putRentalValidation,deleteRentals)
 
 export default router;
