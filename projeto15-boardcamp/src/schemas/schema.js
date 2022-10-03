@@ -40,5 +40,17 @@ const costumersSchema=joi.object({
 
 });
 
+const rentalsSchema=joi.object({
+    customerId:joi.number()
+    .integer()
+    .min(1),
+    gameId:joi.number()
+    .integer()
+    .min(1),
+    daysRented:joi.number()
+    .integer()
+    .min(1),
+})
 
-export {categoriesSchema,gamesSchema,costumersSchema};
+
+export {categoriesSchema,gamesSchema,costumersSchema,rentalsSchema};
